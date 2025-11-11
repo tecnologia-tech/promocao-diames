@@ -19,14 +19,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
       overflow: hidden;
-      position: relative;
-      backface-visibility: hidden;
     }
 
     /* ===========================
-       ⚠️ FAIXAS DIAGONAIS ANIMADAS (GPU + FIXAS)
+       ⚠️ FAIXAS
     ============================ */
     .faixa-alerta {
       position: absolute;
@@ -40,60 +37,120 @@
         #000 50px
       );
       opacity: 0.85;
-      z-index: 1;
       background-size: 200px 200px;
       animation: moverFaixa 6s linear infinite;
+      z-index: 0;
     }
 
-    /* 🎞️ Movimento do padrão (não da faixa inteira) */
     @keyframes moverFaixa {
       from { background-position: 0 0; }
       to { background-position: 200px 0; }
     }
 
-    /* 🟠 Posições e ângulos das faixas */
     .faixa-top {
-      top: -5%;
+      top: -8%;
       left: -30%;
       transform: rotate(-8deg);
     }
 
     .faixa-bottom {
-      bottom: -5%;
+      bottom: -8%;
       left: -30%;
       transform: rotate(8deg);
     }
 
     /* ===========================
-       🟧 TÍTULO PRINCIPAL
+       🔶 MOLDURA
     ============================ */
-    h1 {
+    .decor-border {
+      position: relative;
+      border: 2px solid rgba(255, 122, 26, 0.3);
+      width: 92%;
+      height: 88%;
+      border-radius: 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 2% 3%;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    /* ===========================
+       🖼️ LOGO
+    ============================ */
+    .imagem-destaque {
       position: absolute;
       top: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 5rem;
+      right: 4%;
+      width: 200px;
+      height: 120px;
+      background-color: rgba(255, 122, 26, 0.08);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 4;
+      box-shadow: 0 0 25px rgba(255, 122, 26, 0.3);
+    }
+
+    .imagem-destaque img {
+      width: 75%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 0 8px rgba(255, 122, 26, 0.5));
+      border-radius: 12px;
+    }
+
+    /* ===========================
+       🟧 TÍTULO
+    ============================ */
+    h1 {
+      margin: 0;
+      font-size: 4.5rem;
       font-weight: 900;
       color: #ff7a1a;
       text-transform: uppercase;
       letter-spacing: 3px;
       z-index: 3;
       padding: 0.4em 0.8em;
-      background: rgba(0, 0, 0, 0.65);
-      border: 2px solid rgba(255, 122, 26, 0.3);
+      background: rgba(0, 0, 0, 0.7);
+      border: 2px solid rgba(255, 122, 26, 0.4);
       border-radius: 8px;
       text-shadow:
         0 0 10px rgba(255, 122, 26, 0.7),
         0 0 25px rgba(255, 122, 26, 0.5);
+      margin-bottom: 15px;
     }
 
     /* ===========================
-       🔢 NÚMERO CENTRAL
+       🟡 SUBTÍTULO
+    ============================ */
+    .subtitulo {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #ff7a1a;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      z-index: 3;
+      padding: 0.4em 1em;
+      background: rgba(0, 0, 0, 0.7);
+      border: 2px solid rgba(255, 122, 26, 0.4);
+      border-radius: 8px;
+      text-shadow:
+        0 0 8px rgba(255, 122, 26, 0.6),
+        0 0 20px rgba(255, 122, 26, 0.4);
+      margin-bottom: 5px; /* 🔽 quase nenhum espaço entre o subtítulo e o número */
+    }
+
+    /* ===========================
+       🔢 NÚMERO CENTRAL (ZERADO)
     ============================ */
     .numero-central {
-      font-size: 26vw;
+      font-size: 22vw;
       font-weight: 900;
-      text-align: center;
       color: #ff7a1a;
       text-shadow:
         0 0 15px rgba(255, 122, 26, 0.8),
@@ -101,6 +158,14 @@
         0 0 80px rgba(255, 122, 26, 0.3);
       z-index: 2;
       animation: brilho 2s ease-in-out infinite alternate;
+
+      /* 🧱 AQUI ESTÁ A CORREÇÃO */
+      line-height: 0.8;       /* reduz a caixa de altura da fonte */
+      margin: 0;              /* remove margens externas */
+      padding: 0;             /* remove preenchimento */
+      transform: translateY(-10px); /* sobe o número levemente pra alinhar */
+      display: flex;
+      align-items: flex-start; /* garante que a linha do topo seja o limite real */
     }
 
     @keyframes brilho {
@@ -109,63 +174,41 @@
     }
 
     /* ===========================
-       🖼️ LOGO
+       🟣 TEXTO INFERIOR
     ============================ */
-    .imagem-destaque {
-      position: absolute;
-      top: 8%;
-      right: 5%;
-      width: 240px;
-      height: 150px;
-      background-color: rgba(255, 122, 26, 0.08);
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 4;
-      box-shadow: 0 0 25px rgba(255, 122, 26, 0.2);
-    }
-
-    .imagem-destaque img {
-      width: 75%;
-      height: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 0 8px rgba(255, 122, 26, 0.5));
-      border-radius: 15px;
-    }
-
-    /* ===========================
-       🔶 MOLDURA
-    ============================ */
-    .decor-border {
-      position: absolute;
-      border: 2px solid rgba(255, 122, 26, 0.3);
-      width: 95%;
-      height: 90%;
-      top: 5%;
-      left: 2.5%;
-      border-radius: 25px;
-      z-index: 1;
+    .subtexto {
+      font-size: 2.3rem;
+      font-weight: 900;
+      color: #ff7a1a;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      z-index: 3;
+      padding: 0.6em 1.2em;
+      background: rgba(0, 0, 0, 0.75);
+      border: 2px solid rgba(255, 122, 26, 0.4);
+      border-radius: 8px;
+      text-shadow:
+        0 0 10px rgba(255, 122, 26, 0.7),
+        0 0 25px rgba(255, 122, 26, 0.5);
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <!-- ⚠️ FAIXAS DE ALERTA -->
+  <!-- ⚠️ FAIXAS -->
   <div class="faixa-alerta faixa-top"></div>
   <div class="faixa-alerta faixa-bottom"></div>
 
-  <!-- 🔶 MOLDURA -->
-  <div class="decor-border"></div>
+  <!-- 🔶 CONTEÚDO -->
+  <div class="decor-border">
+    <div class="imagem-destaque">
+      <img src="12p.png" alt="Logo 12P">
+    </div>
 
-  <!-- 🖼️ LOGO -->
-  <div class="imagem-destaque">
-    <img src="12p.png" alt="Logo 12P">
+    <h1>11/11 NO 12P</h1>
+    <div class="subtitulo">PROMOÇÕES RESTANTES:</div>
+    <div class="numero-central">5</div>
+    <div class="subtexto">DEU A LOUCA NO CAMONHA!</div>
   </div>
-
-  <!-- 🟧 TÍTULO -->
-  <h1>11/11 NO 12P</h1>
-
-  <!-- 🔢 NÚMERO CENTRAL -->
-  <div class="numero-central">5</div>
 </body>
 </html>
