@@ -5,36 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>11/11 na 12P - Promoção Especial</title>
 
-  <!-- 💥 Fonte Bebas Neue -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
   <style>
-    /* ===========================
-       🎨 BASE GERAL
-    ============================ */
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      width: 100vw;
+    /* RESET TOTAL */
+    * {
+        margin: 10px;
+        padding: 10px;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
       background-color: #000;
-      color: #ff7a1a;
       font-family: "Bebas Neue", sans-serif;
+      color: #ff7a1a;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
     }
 
-    /* ===========================
-       ⚠️ FAIXAS
-    ============================ */
+    /* FAIXAS */
     .faixa-alerta {
       position: absolute;
       width: 250%;
-      height: 70px;
+      height: 80px;
       background: repeating-linear-gradient(
         -45deg,
         #ff7a1a 0,
@@ -43,7 +42,6 @@
         #000 50px
       );
       opacity: 0.85;
-      background-size: 200px 200px;
       animation: moverFaixa 6s linear infinite;
       z-index: 0;
     }
@@ -65,36 +63,30 @@
       transform: rotate(8deg);
     }
 
-    /* ===========================
-       🔶 MOLDURA
-    ============================ */
+    /* CONTEÚDO PRINCIPAL */
     .decor-border {
       position: relative;
       border: 2px solid rgba(255, 122, 26, 0.3);
-      width: 92%;
-      height: 88%;
       border-radius: 25px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      box-sizing: border-box;
-      padding: 2% 3%;
-      overflow: hidden;
+      width: 92%;
+      max-width: 1200px;
+      background: rgba(0, 0, 0, 0.2);
       z-index: 2;
     }
 
-    /* ===========================
-       🖼️ LOGO
-    ============================ */
+    /* LOGO */
     .imagem-destaque {
       position: absolute;
-      top: 5%;
+      top: 3%;
       right: 4%;
-      width: 200px;
-      height: 120px;
+      width: 180px;
+      height: 110px;
       background-color: rgba(255, 122, 26, 0.08);
-      border-radius: 20px;
+      border-radius: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -103,101 +95,90 @@
     }
 
     .imagem-destaque img {
-      width: 75%;
+      width: 70%;
       height: auto;
-      object-fit: contain;
       filter: drop-shadow(0 0 8px rgba(255, 122, 26, 0.5));
-      border-radius: 12px;
     }
 
-    /* ===========================
-       🟧 TÍTULO
-    ============================ */
+    /* TEXTOS */
     h1 {
-      margin: 0;
-      font-size: 5rem;
-      font-weight: 400;
-      color: #ff7a1a;
+      font-size: 7rem; /* 🔥 maior */
       text-transform: uppercase;
-      letter-spacing: 3px;
-      z-index: 3;
-      padding: 0.4em 0.8em;
+      letter-spacing: 4px;
       background: rgba(0, 0, 0, 0.7);
       border: 2px solid rgba(255, 122, 26, 0.4);
       border-radius: 8px;
-      text-shadow:
-        0 0 10px rgba(255, 122, 26, 0.7),
-        0 0 25px rgba(255, 122, 26, 0.5);
-      margin-bottom: 15px;
+      text-shadow: 0 0 25px rgba(255, 122, 26, 0.5);
+      padding: 0px;
+      z-index: 3;
     }
 
-    /* ===========================
-       🟡 SUBTÍTULO
-    ============================ */
     .subtitulo {
-      font-size: 2.5rem;
-      font-weight: 400;
-      color: #ff7a1a;
+      font-size: 3.4rem; /* 🔥 um pouco maior */
       text-transform: uppercase;
-      letter-spacing: 2px;
-      z-index: 3;
-      padding: 0.4em 1em;
       background: rgba(0, 0, 0, 0.7);
       border: 2px solid rgba(255, 122, 26, 0.4);
       border-radius: 8px;
-      text-shadow:
-        0 0 8px rgba(255, 122, 26, 0.6),
-        0 0 20px rgba(255, 122, 26, 0.4);
-      margin-bottom: 5px;
+      text-shadow: 0 0 25px rgba(255, 122, 26, 0.5);
+      padding: 0px;
+      margin-top: 0px;
+      z-index: 3;
     }
 
-    /* ===========================
-       🔢 NÚMERO CENTRAL
-    ============================ */
-    .numero-central {
-      font-size: 22vw;
-      font-weight: 400;
-      color: #ff7a1a;
-      text-shadow:
-        0 0 15px rgba(255, 122, 26, 0.8),
-        0 0 40px rgba(255, 122, 26, 0.6),
-        0 0 80px rgba(255, 122, 26, 0.3);
-      z-index: 2;
-      animation: brilho 2s ease-in-out infinite alternate;
-      line-height: 0.8;
-     margin-top: 25px;
-      transform: translateY(-10px);
+    /* IMAGEM + NÚMERO */
+    .foto-numero {
+      position: relative;
+      width: 380px; /* 📸 imagem maior */
       display: flex;
-      align-items: flex-start;
+      align-items: center;
+      justify-content: center;
+      margin: 0px;
+      z-index: 3;
+    }
+
+    .foto-numero img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      filter: drop-shadow(0 0 25px rgba(255, 122, 26, 0.3));
+    }
+
+    .foto-numero .numero-central {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 25rem; /* 🔥 bem grande */
+      color: #ff7a1a;
+      -webkit-text-stroke: 3px #000; /* borda preta */
+      text-shadow:
+        0 0 25px rgba(255, 122, 26, 0.8),
+        0 0 50px rgba(255, 122, 26, 0.5);
+      animation: brilho 2s ease-in-out infinite alternate;
+      z-index: 5;
+      line-height: 0.8;
     }
 
     @keyframes brilho {
-      0% { text-shadow: 0 0 15px rgba(255,122,26,0.7); }
-      100% { text-shadow: 0 0 40px rgba(255,122,26,1); }
+      0% { text-shadow: 0 0 15px rgba(255,122,26,0.7); opacity: 0.9; }
+      100% { text-shadow: 0 0 40px rgba(255,122,26,1); opacity: 1; }
     }
 
-    /* ===========================
-       🟣 TEXTO INFERIOR
-    ============================ */
     .subtexto {
-      font-size: 2.5rem;
-      font-weight: 400;
-      color: #ff7a1a;
+      font-size: 3.3rem; /* 🔥 maior */
       text-transform: uppercase;
       letter-spacing: 3px;
-      z-index: 3;
-      padding: 0.6em 1.2em;
       background: rgba(0, 0, 0, 0.75);
       border: 2px solid rgba(255, 122, 26, 0.4);
       border-radius: 8px;
-      text-shadow:
-        0 0 10px rgba(255, 122, 26, 0.7),
-        0 0 25px rgba(255, 122, 26, 0.5);
-      margin-top: 10px;
+      text-shadow: 0 0 25px rgba(255, 122, 26, 0.5);
+      padding: 0px;
+      z-index: 3;
     }
   </style>
 </head>
 <body>
+  <!-- ⚠️ FAIXAS -->
   <div class="faixa-alerta faixa-top"></div>
   <div class="faixa-alerta faixa-bottom"></div>
 
@@ -208,7 +189,12 @@
 
     <h1>11/11 NO 12P</h1>
     <div class="subtitulo">PROMOÇÕES RESTANTES:</div>
-    <div class="numero-central">5</div>
+
+    <div class="foto-numero">
+      <img src="camonha.png" alt="Camonha Maluco">
+      <div class="numero-central">5</div>
+    </div>
+
     <div class="subtexto">DEU A LOUCA NO CAMONHA!</div>
   </div>
 </body>
