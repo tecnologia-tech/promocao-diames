@@ -24,42 +24,47 @@
       overflow: hidden;
       position: relative;
     }
+/* ⚠️ FAIXAS ANIMADAS INFINITAS - FLUIDAS E LEVES */
+.faixa {
+  position: absolute;
+  width: 400%; /* faixa mais comprida */
+  height: 60px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #ff7a1a 0 25px,
+    #000 25px 50px
+  );
+  animation: moverFaixa 15s linear infinite; /* ciclo mais longo e suave */
+  opacity: 0.85;
+  z-index: 1;
+  will-change: background-position, transform; /* aceleração GPU */
+  transform: translate3d(0, 0, 0);
+}
 
-    /* ⚠️ FAIXAS ANIMADAS INFINITAS */
-    .faixa {
-      position: absolute;
-      width: 300%;
-      height: 60px;
-      background: repeating-linear-gradient(
-        -45deg,
-        #ff7a1a 0 25px,
-        #000 25px 50px
-      );
-      animation: moverFaixa 4s linear infinite;
-      opacity: 0.85;
-      z-index: 1;
-    }
+.faixa-top {
+  top: 6%;
+  left: -150%;
+  transform: rotate(-10deg);
+}
 
-    .faixa-top {
-      top: 6%;
-      left: -100%;
-      transform: rotate(-10deg);
-    }
+.faixa-bottom {
+  bottom: 6%;
+  left: -150%;
+  transform: rotate(10deg);
+}
 
-    .faixa-bottom {
-      bottom: 6%;
-      left: -100%;
-      transform: rotate(10deg);
-    }
+/* 🌊 Movimento contínuo e fluido */
+@keyframes moverFaixa {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 0; /* deslocamento longo = transição imperceptível */
+  }
+}
 
-    @keyframes moverFaixa {
-      0% {
-        background-position: 0 0;
-      }
-      100% {
-        background-position: 200px 0;
-      }
-    }
+
+  
 
     /* 🟧 TÍTULO */
     h1 {
@@ -188,7 +193,7 @@ img{
   </div>
 
   <!-- 🟧 TÍTULO -->
-  <h1>11/11 na 12P</h1>
+  <h1>11/11 no 12P</h1>
 
   <!-- 🔢 NÚMERO CENTRAL -->
   <div class="numero-central">5</div>
