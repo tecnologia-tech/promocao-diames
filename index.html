@@ -1,9 +1,15 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>11/11 na 12P - Promoção Especial</title>
+
+  <!-- 💥 Fonte Bebas Neue -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
   <style>
     /* ===========================
        🎨 BASE GERAL
@@ -15,7 +21,7 @@
       width: 100vw;
       background-color: #000;
       color: #ff7a1a;
-      font-family: "Montserrat", "Roboto", sans-serif;
+      font-family: "Bebas Neue", sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -109,8 +115,8 @@
     ============================ */
     h1 {
       margin: 0;
-      font-size: 4.5rem;
-      font-weight: 900;
+      font-size: 5rem;
+      font-weight: 400;
       color: #ff7a1a;
       text-transform: uppercase;
       letter-spacing: 3px;
@@ -129,8 +135,8 @@
        🟡 SUBTÍTULO
     ============================ */
     .subtitulo {
-      font-size: 2rem;
-      font-weight: 800;
+      font-size: 2.5rem;
+      font-weight: 400;
       color: #ff7a1a;
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -142,15 +148,15 @@
       text-shadow:
         0 0 8px rgba(255, 122, 26, 0.6),
         0 0 20px rgba(255, 122, 26, 0.4);
-      margin-bottom: 5px; /* 🔽 quase nenhum espaço entre o subtítulo e o número */
+      margin-bottom: 5px;
     }
 
     /* ===========================
-       🔢 NÚMERO CENTRAL (ZERADO)
+       🔢 NÚMERO CENTRAL
     ============================ */
     .numero-central {
       font-size: 22vw;
-      font-weight: 900;
+      font-weight: 400;
       color: #ff7a1a;
       text-shadow:
         0 0 15px rgba(255, 122, 26, 0.8),
@@ -158,14 +164,11 @@
         0 0 80px rgba(255, 122, 26, 0.3);
       z-index: 2;
       animation: brilho 2s ease-in-out infinite alternate;
-
-      /* 🧱 AQUI ESTÁ A CORREÇÃO */
-      line-height: 0.8;       /* reduz a caixa de altura da fonte */
-      margin: 0;              /* remove margens externas */
-      padding: 0;             /* remove preenchimento */
-      transform: translateY(-10px); /* sobe o número levemente pra alinhar */
+      line-height: 0.8;
+     margin-top: 25px;
+      transform: translateY(-10px);
       display: flex;
-      align-items: flex-start; /* garante que a linha do topo seja o limite real */
+      align-items: flex-start;
     }
 
     @keyframes brilho {
@@ -177,8 +180,8 @@
        🟣 TEXTO INFERIOR
     ============================ */
     .subtexto {
-      font-size: 2.3rem;
-      font-weight: 900;
+      font-size: 2.5rem;
+      font-weight: 400;
       color: #ff7a1a;
       text-transform: uppercase;
       letter-spacing: 3px;
@@ -195,11 +198,9 @@
   </style>
 </head>
 <body>
-  <!-- ⚠️ FAIXAS -->
   <div class="faixa-alerta faixa-top"></div>
   <div class="faixa-alerta faixa-bottom"></div>
 
-  <!-- 🔶 CONTEÚDO -->
   <div class="decor-border">
     <div class="imagem-destaque">
       <img src="12p.png" alt="Logo 12P">
